@@ -1,0 +1,17 @@
+{
+  "name": "static",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jongho <ho1234c@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
