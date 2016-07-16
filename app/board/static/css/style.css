@@ -1,3 +1,13 @@
 body{
-    background-color: #ffffee;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid black;
 }
