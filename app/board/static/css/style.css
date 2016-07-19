@@ -2,12 +2,92 @@ body{
 
 }
 
-table {
-    border-collapse: collapse;
-    width: 50%;
-    margin: 0 auto;
+a{
+    color: black;
 }
 
-table, th, td {
-    border: 1px solid black;
+a:hover{
+    text-decoration: none;
+}
+
+#container{
+    height: 100%;
+    width: 100%;
+}
+
+#table-container{
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -350px;
+
+}
+
+#form-container{
+    width: 300px;
+    margin: 50px auto;
+}
+
+.post-header{
+    width: 700px;
+    border-top: none
+
+}
+
+.post-info{
+    float: right;
+    border: none;
+    line-height: 30px;
+}
+
+.post-content{
+    padding: 30px 0;
+    vertical-align: top;
+    border: none;
+    border-bottom: 1px dotted #343434;
+    height: 300px;
+}
+
+.post-footer{
+    float: right;
+}
+
+.fieldWrapper{
+    height: 50px;
+
+}
+
+.signUpBtn{
+    height: 30px;
+}
+
+form{
+    font-size: 1.2em;
+}
+
+form > input{
+    float: right;
+}
+label{
+    width: 100px;
+}
+
+th {
+    border-top: 1px dotted #343434;
+    border-bottom: 1px dotted #343434;
+}
+
+td {
+    border-top: 1px dotted #343434;
+    border-bottom: 1px dotted #343434;
+}
+
+th {
+    text-align: center;
+}
+
+tr {
+    height: 30px;
 }

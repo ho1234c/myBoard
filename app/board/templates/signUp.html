@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block contents %}
+    <div id="table-container">
+        <table>
+        <tbody>
+            <tr><td class="post-header">회원가입</td></tr>
+            <tr><td>
+                <div id="form-container">
+                    <form id="signup" method="POST" action="{% url 'board.views.signUp' %}">
+                        {% csrf_token %}
+                        {% for field in userform %}
+                            <div class="fieldWrapper">
+                                {{ field.errors }}
+                                {{ field.label_tag }}: {{ field }}
+                            </div>
+                        {% endfor %}
+                        <input type="submit" value="submit">
+                    </form>
+                </div>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+{% endblock contents %}

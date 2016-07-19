@@ -23,7 +23,7 @@ class Users(models.Model):
 
 class Posts(models.Model):
     title = models.CharField(max_length=100, null=False)
-    content = models.TextField
+    content = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     comment = models.PositiveSmallIntegerField(default=0)

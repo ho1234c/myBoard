@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="kr">
-<head>
-    <meta charset="UTF-8">
-    <title>board</title>
-    {% load staticfiles %}
-    <link rel="stylesheet" href="{% static "bower_components/bootstrap/dist/css/bootstrap.css" %}">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-<body>
-<div id="container">
-    <table>
-        <tbody>
-        <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>글쓴이</th>
-        </tr>
-        {% for post in post_list %}
-        <tr>
-            <td>{{ post.id }}</td>
-            <td>{{ post.title }}</td>
-            <td>{{ post.user }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-
-
-    </table>
-
-</div>
-<script src="{% static "bower_components/jquery/dist/jquery.js" %}"></script>
-<script src="{% static "bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contents %}
+    <div id="table-container">
+        <div class="signUpBtn"><a href="{% url 'board.views.signUp' %}">회원가입</a></div>
+        <table>
+            <tbody>
+            <tr class="table-header">
+                <th width="60">번호</th>
+                <th width="540">제목</th>
+                <th width="100">글쓴이</th>
+            </tr>
+            {% for post in post_list %}
+                <tr>
+                    <td style="text-align: center">{{ post.id }}</td>
+                    <td><a href="{{ post.id }}">{{ post.title }}</a></td>
+                    <td>{{ post.user.name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock contents %}

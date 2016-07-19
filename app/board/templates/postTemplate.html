@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block contents %}
+    <div id="table-container">
+        <table>
+            <tbody>
+            <tr>
+                <td class="post-header">제목 : {{ post.title }}</td>
+            </tr>
+            <tr>
+                <td class="post-info">{{ post.created }}</td>
+            </tr>
+            <tr>
+                <td class="post-info">글쓴이 : {{ post.user.name }}</td>
+            </tr>
+            <tr>
+                <td class="post-content">{{ post.content | linebreaksbr }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="post-footer">
+            <a href="{% url "board.views.index" %}">목록으로</a>
+        </div>
+    </div>
+
+
+{% endblock contents %}
