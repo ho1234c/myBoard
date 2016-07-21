@@ -145,12 +145,12 @@ tr {
 
 .pagination-left{
     float: left;
-    text-align: center;
+    text-align: left;
     width: 10%;
 }
 
 .pagination-right{
     float: right;
-    text-align: center;
+    text-align: right;
     width: 10%;
 }
