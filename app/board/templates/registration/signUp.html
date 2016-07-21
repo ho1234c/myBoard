@@ -11,7 +11,7 @@
                         {% for field in userform %}
                             <div class="fieldWrapper">
                                 {{ field.errors }}
-                                {{ field.label_tag }}: {{ field }}
+                                {{ field.label_tag }} {{ field }}
                             </div>
                         {% endfor %}
                         <input type="submit" value="submit">

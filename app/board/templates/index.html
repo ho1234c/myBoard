@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 {% block contents %}
     <div id="table-container">
-    <div class="menu">
-        {% if request.session.username %}
-            <div class="menu-right"><a href="{% url 'board.views.logout' %}">[ 로그아웃 ]</a></div>
-            <div class="menu-right">환영합니다. {{ request.session.username }} 님</div>
+        <div class="menu">
+            {% if request.session.username %}
+                <div class="menu-right"><a href="{% url 'board.views.logout' %}">[ 로그아웃 ]</a></div>
+                <div class="menu-right">환영합니다. {{ request.session.username }} 님</div>
 
-            <div class="menu-left"><a href="{% url 'board.views.createPost' %}">[ 글작성 ]</a></div>
+                <div class="menu-left"><a href="{% url 'board.views.createPost' %}">[ 글작성 ]</a></div>
 
-        {% else %}
-            <div class="menu-left"><a href="{% url 'board.views.signUp' %}">회원가입</a></div>
-            <div class="menu-right"><a href="{% url 'login' %}">로그인</a></div>
-        {% endif %}
-    </div>
-
+            {% else %}
+                <div class="menu-left"><a href="{% url 'board.views.signUp' %}">회원가입</a></div>
+                <div class="menu-right"><a href="{% url 'login' %}">로그인</a></div>
+            {% endif %}
+        </div>
         <table>
             <tbody>
             <tr class="table-header">
@@ -30,5 +29,24 @@
             {% endfor %}
             </tbody>
         </table>
+    <div class="pagination">
+        <div class="pagination-left">
+        {% if post_list.has_previous %}
+            <a href="?page={{ post_list.previous_page_number }}">previous</a>
+        {% else %}
+            previous
+        {% endif %}
+        </div>
+
+        <div class="current">
+            Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
+        </div>
+
+        {% if post_list.has_next %}
+            <div class="pagination-right">
+                <a href="?page={{ post_list.next_page_number }}">next</a>
+            </div>
+        {% endif %}
+</div>
     </div>
 {% endblock contents %}

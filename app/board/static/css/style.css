@@ -57,8 +57,12 @@ a:hover{
 
 .fieldWrapper{
     height: 50px;
-
 }
+
+.fieldWrapper label{
+    width: 80px;
+}
+
 .menu{
     width: 100%;
     display: inline-block;
@@ -127,4 +131,26 @@ th {
 
 tr {
     height: 30px;
+}
+
+.pagination{
+    width: 100%;
+}
+
+.current{
+    text-align: center;
+    width: 80%;
+    display: inline-block;
+}
+
+.pagination-left{
+    float: left;
+    text-align: center;
+    width: 10%;
+}
+
+.pagination-right{
+    float: right;
+    text-align: center;
+    width: 10%;
 }

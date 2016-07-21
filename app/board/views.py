@@ -1,12 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from .models import Posts, Users, Categories
 from form import UserForm
 
 # Create your views here.
 def index(request):
-    post_list = reversed(Posts.objects.all())
+    post = Posts.objects.order_by('pk').reverse()
+    paginator = Paginator(post, 10)
+    page = request.GET.get('page')
+
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.page(paginator.num_pages)
+
     return render(request, 'index.html', {'post_list': post_list})
 
 
