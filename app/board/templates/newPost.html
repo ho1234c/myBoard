@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block contents %}
+    <div id="table-container">
+        <table>
+            <form id="newPost" method="POST" action="{% url 'board.views.createPost' %}">
+                {% csrf_token %}
+                <tbody>
+                <tr>
+                    <td class="post-header">
+                        <label for="newPost" class="postLavel">제목 : </label>
+                        <input type="text" class="postTitle" name="title">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="post-content">
+                        <label for="content" class="postLavel">내용 : </label>
+                        <textarea class="postContent" name="content"> </textarea>
+                    </td>
+                </tr>
+                    <td style="border: none">
+                        <input type="submit" class="postSubmitBtn" value="submit">
+                    </td>
+                </tbody>
+            </form>
+        </table>
+        <div class="post-footer">
+            <a href="{% url "board.views.index" %}">목록으로</a>
+        </div>
+    </div>
+
+
+{% endblock contents %}

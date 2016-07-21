@@ -8,6 +8,7 @@ a{
 
 a:hover{
     text-decoration: none;
+    color: #6352d2;
 }
 
 #container{
@@ -58,10 +59,24 @@ a:hover{
     height: 50px;
 
 }
-
-.signUpBtn{
-    height: 30px;
+.menu{
+    width: 100%;
+    display: inline-block;
 }
+
+.menu-right{
+    display: inline-block;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+}
+
+.menu-left{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
 
 form{
     font-size: 1.2em;
@@ -70,8 +85,30 @@ form{
 form > input{
     float: right;
 }
-label{
+
+.control-label{
     width: 100px;
+}
+
+.postTitle{
+    width: 90%;
+    margin: 0 10px;
+}
+
+.postContent{
+    width: 90%;
+    height: 100%;
+    margin: 0 10px;
+}
+
+.postLavel{
+    float: left;
+}
+
+.postSubmitBtn{
+    width: 80px;
+    margin: 10px auto;
+    display: block;
 }
 
 th {

@@ -122,6 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+# this code is for log on console.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

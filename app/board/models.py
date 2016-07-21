@@ -27,7 +27,7 @@ class Posts(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     comment = models.PositiveSmallIntegerField(default=0)
-    Category = models.ForeignKey(Categories)
+    category = models.ForeignKey(Categories)
     user = models.ForeignKey(Users, null=True)
 
     def __str__(self):

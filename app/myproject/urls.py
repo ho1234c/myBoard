@@ -19,8 +19,10 @@ from board import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),                                   # index page
+    url(r'^$', views.index, name='index'),                     # index page
     url(r'^new/$', views.createPost),                          # create new post
     url(r'^(?P<pk>\d+)/$', views.showPost),                    # show post by number of posts
-    url(r'^login/$', views.signUp, name='signUp'),             # sign up page
+    url(r'^signup/$', views.signUp, name='signUp'),            # sign up page
+    url(r'^login/$', views.signIn, name='login'),              # login
+    url(r'^logout/$', views.logout, name='logout'),          # logout
 ]

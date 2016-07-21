@@ -2,7 +2,7 @@
 {% block contents %}
     <div id="table-container">
         <table>
-        <tbody>
+            <tbody>
             <tr><td class="post-header">회원가입</td></tr>
             <tr><td>
                 <div id="form-container">
@@ -19,8 +19,11 @@
                 </div>
             </td>
             </tr>
-        </tbody>
+            </tbody>
         </table>
+        <div class="post-footer">
+            <a href="{% url "board.views.index" %}">목록으로</a>
+        </div>
     </div>
 
 {% endblock contents %}
